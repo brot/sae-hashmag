@@ -1,0 +1,770 @@
+/* Hallo Marc, Fabio, Peter,
+damit der Border vom Button bei Hover nicht springt, habe 
+ich die gleiche Farbe bei background-color und border genommen */
+
+
+/* --------------------------- GENERAL STYLING ---------------------------*/
+
+* {
+    box-sizing: border-box;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    /* Meldung: "Invalid separator in shape definition. It must be a comma." - code für Visually Hidden von Unterricht übernommen */ 
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+p {
+    margin: 0;
+    font-family: whitman-display, serif;
+}
+
+.grid-wrapper .p_less_margin {
+    margin-bottom: 2rem;
+}
+
+a {
+    margin: 0;
+    font-family: whitman-display, serif; 
+    color: black;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main, footer {
+    margin: 0;
+    padding-right: 1rem;
+}
+
+footer {
+    padding-inline-start: 1rem;
+}
+
+html {
+    font-size: 25px;
+    height: 100%;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+header, footer {
+    flex-shrink: 0;
+}
+
+table ul li{
+    list-style: none;
+}
+
+table ul {
+    padding: 0;
+}
+
+/* --------------------------- ALERT SUCCESSFULLY CHANGED MESSAGES ---------------------------*/
+
+.alert {
+    color: #EB5E5E;
+    margin-bottom: 1rem;
+}
+
+/* --------------------------- ANIMATION HEADLINE ---------------------------*/
+
+.h1_animate {
+    height: 150px;
+}
+
+h1 {
+    overflow: hidden;
+}
+
+/* --------------------------- ICON DELETE PRODUCT --------------------------*/
+
+.container_product_delete {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon_delete {
+    width: 25px;
+    height: 25px;
+    fill: #eb5e5e;
+}
+
+/* --------------------------- BUTTON ---------------------------*/
+
+button {
+    background-color: #EB5E5E;
+    border: 2px solid #EB5E5E;
+    padding: 7px 50px 7px 50px;
+    color: white;
+    font-size: 1.2rem;
+    font-family: whitman-display, serif;
+    font-weight: 800;
+    font-style: normal;
+    margin-bottom: 40px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.styled-link {
+    background-color: #EB5E5E;
+    border: 2px solid #EB5E5E;
+    padding: 7px 50px 7px 50px;
+    color: white;
+    font-size: 1.2rem;
+    font-family: whitman-display, serif;
+    font-weight: 800;
+    font-style: normal;
+    margin-bottom: 40px;
+    border-radius: 3px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+button:hover, .styled-link:hover {
+    background-color: white;
+    border: 2px solid #EB5E5E;
+    color: #EB5E5E;
+}
+
+.button_cancel {
+    background-color: white;
+    border: 2px solid #EB5E5E;
+    padding: 7px 50px 7px 50px;
+    color: #EB5E5E;
+    font-size: 1.2rem;
+    font-family: whitman-display, serif;
+    font-weight: 800;
+    font-style: normal;
+    margin-bottom: 40px;
+    border-radius: 3px;
+    margin-right: 0.5rem;
+    text-decoration: none;
+}
+
+
+.button_cancel:hover {
+    background-color: #EB5E5E;
+    border: 2px solid #EB5E5E;
+    color: white;
+}
+
+.action_button_table {
+    background-color: white;
+    border: 2px solid #EB5E5E;
+    padding: 0 30px 0 30px;
+    color: #EB5E5E;
+    font-size: 1.2rem;
+    font-family: whitman-display, serif;
+    font-weight: 800;
+    font-style: normal;
+    margin-bottom: 40px;
+    border-radius: 3px;
+    margin-right: 0.5rem;
+    height: 40px;
+    text-decoration: none;  
+}
+
+.action_button_table:hover {
+    background-color: #EB5E5E;
+    border: 2px solid #EB5E5E;
+    color: white;
+}
+
+.action_button_table-cancel {
+    background-color: #EB5E5E;
+    border: 2px solid #EB5E5E;
+    color: white;
+    padding: 0 30px 0 30px;
+    font-size: 1.2rem;
+    font-family: whitman-display, serif;
+    font-weight: 800;
+    font-style: normal;
+    margin-bottom: 40px;
+    border-radius: 3px;
+    margin-right: 0.5rem;
+    height: 40px;
+    text-decoration: none; 
+}
+
+.action_button_table-cancel:hover {
+    background-color: white;
+    border: 2px solid #EB5E5E;
+    color: #EB5E5E;
+}
+
+/* --------------------------- NAVIGATION ---------------------------*/
+
+.wrapper_nav li {
+    text-decoration: none;
+    list-style: none;
+    padding-right: 2rem; 
+}
+
+.wrapper_nav a {
+    text-decoration: none;  
+}
+
+.hash_logo a {
+    font-size: 2rem;
+    color: #EB5E5E;
+    font-family: whitman-display, serif;
+    font-weight: 800;
+    font-style: normal; 
+    text-decoration: none;  
+}
+
+.wrapper_nav {
+    display: flex;
+    position: relative;
+    width: 100vw;
+    background-color: white;
+    /* height: 80px; */
+    box-shadow: 0 10px 6px -6px #eeeeee;
+    padding-left: 1rem;
+    margin-bottom: 60px;
+    text-align: right;
+}
+
+.totalProducts {
+    background-color: #EB5E5E;
+    color: white;
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    font-size: 0.7rem;
+    transform: translateY(-30%);
+}
+
+.hash_logo p {
+    transform: translateY(-20%);
+}
+
+.current {
+    font-weight: 800;
+}
+
+.menu_icon {
+    width: 45px;
+}
+
+.menu_points--open {
+    max-height: 250px;
+}
+
+.menu_points {
+    padding: 0;
+    background-color: white;
+    overflow: hidden;
+    transition: max-height .5s ease-in-out;
+    margin-left: auto;
+    width: 100%;
+}
+
+.menu_points li:first-child {
+    float: left;
+}
+
+/* --------------------------- STICKY NAV ---------------------------*/
+
+.sticky {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.content {
+    padding-top: 0;
+    border: 1px solid red;
+}
+
+.sticky + .j-sticky-nav {
+    padding-top: 293px;
+}
+
+/* --------------------------- HEADER ---------------------------*/
+
+.index_h1 {
+    text-align: right;
+    /* font-size: 3.4rem;
+    line-height: 3.4rem; */
+    font-size: 5.2rem;
+    line-height: 4.4rem;
+    font-family: whitman-display, serif;
+    font-weight: 800;
+    font-style: normal;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+.h1_highlight {
+    color: #EB5E5E;
+}
+
+h2 {
+    margin: 0 0 1.5rem 0;
+    font-size: 1rem;
+}
+
+.intro, .selection_paragraph {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-family: whitman-display, serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 40px;
+    margin-bottom: 100px;
+    width: 60%;
+}
+
+.img-first-issue {
+    width: 100%;
+}
+
+/* --------------------------- BODY ---------------------------*/
+
+.magazin_cover {
+    box-shadow: 0 3px 7px lightgray;
+    width: 100%;   
+    margin-bottom: 0.5rem;
+}
+
+hr {
+    border: 2px solid #EB5E5E;
+    margin-top: 1.5rem;
+}
+
+/* --------------------------- GENERAL STYLING GRID ---------------------------*/
+
+.grid-wrapper-headline {
+    display: grid;
+    grid-column-gap: 35px;
+    grid-auto-flow: row;  
+    grid-template-columns: repeat(3,minmax(300px, 1fr)); 
+    padding-left: 1rem;
+}
+
+.grid-wrapper {
+    display: grid;
+    grid-column-gap: 35px;
+    padding-left: 1rem;
+    grid-auto-flow: row;  
+    grid-template-columns: repeat(auto-fit,minmax(300px, 1fr)); 
+    margin-bottom: 2rem;
+}
+
+.grid-wrapper p, .grid-wrapper hr {
+    margin-bottom: 10%;
+}
+
+/* --------------------------- FOOTER ---------------------------*/
+
+footer a, footer p {
+    color: #EB5E5E;
+}
+
+footer div {
+    margin-bottom: 1rem;
+    width: 60%;
+    padding-right: 2rem;
+}
+
+footer div:last-child {
+    padding-right: 0;
+}
+
+.wrapper-some {
+    display: flex;
+    padding-right: 0;
+}
+
+.wrapper-some div:last-child{
+    padding-right: 0;
+}
+
+/* --------------------------- DASHBOARD ---------------------------*/
+
+.dashboard ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dashboard_card {
+    border: 0.5px solid lightgray;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.dashboard li {
+    margin-bottom: 1rem;
+}
+
+/* --------------------------- ############ SUBPAGE MAGAZINE ############ ---------------------------*/
+
+.all_magazin {
+    display: grid;
+    grid-column-gap: 35px;
+    grid-auto-flow: row;  
+    padding-left: 1rem;
+    grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+}
+
+.magazin button {
+    margin-bottom: 3rem;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+.price {
+    color: #EB5E5E;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    font-family: whitman-display, serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.link-more-information {
+    text-decoration: underline;
+}
+
+.magazin p {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    width: 90%;
+}
+
+.all_magazin {
+    margin-bottom: 3rem;
+}
+
+.magazin {
+    margin-bottom: 2rem;
+}
+
+/* --------------------------- REGISTER FORM ---------------------------*/
+
+.j-form p {
+    margin-bottom: 0;
+}
+
+label {
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+    font-family: whitman-display, serif;
+    font-weight: 400;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"] {
+    width: 100%;
+    border: 1px solid grey;
+    border-radius: 5px;
+    height: 40px;
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+}
+
+input[type="checkbox"] {
+    margin-bottom: 2rem;
+}
+
+input[type="file"] {
+    width: 100%;
+    border-radius: 5px;
+    height: 40px;
+    margin-bottom: 1rem;
+}
+
+#images_p {
+    margin-bottom: 1rem;
+}
+
+.delete_img {
+    width: 50%;
+    box-shadow: 0 3px 7px lightgray;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.container_image {
+    margin-bottom: 3rem;
+}
+
+select {
+    width: 100%;
+    border: 1px solid grey;
+    border-radius: 5px;
+    height: 40px;
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+}
+
+textarea {
+    width: 100%;
+    border: 1px solid grey;
+    border-radius: 5px;
+    height:90px;
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+.chooseShippingService {
+    width: 80%;
+    border: 1px solid grey;
+    border-radius: 5px;
+    height: 40px;
+    margin-bottom: 1rem;
+    font-size: 0.7rem;
+    font-family: whitman-display, serif;
+    font-weight: 400;
+}
+
+.radio_gender {
+    margin-bottom: 30px;
+}
+
+.checkbox_books {
+    margin-bottom: 30px;
+}
+
+.form_p {
+    margin-bottom: 1rem;
+    padding-left: 5rem;
+}
+
+.form-mandatory {
+    margin-bottom: 1.5rem;
+}
+
+.button-submit {
+    margin-bottom: 1rem;
+}
+
+.policy  {
+    margin-bottom: 1rem;    
+}
+
+.formular h2 {
+    padding-left: 5rem;
+}
+
+/* --------------------------- LOGIN FORM  ---------------------------*/
+
+.remember_me {
+    margin-bottom: 1.5rem;
+}
+
+/* --------------------------- ORDERS EDIT  ---------------------------*/
+
+.readonly_input[readonly] {
+    background-color: #e9ecef;
+}
+
+/* --------------------------- PRODUCT TABLE ---------------------------*/
+
+.product_table_oveview {
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* --------------------------- TABLES STYLING ---------------------------*/
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+}
+
+.table td {
+    padding: 10px;
+}
+
+.table th {
+    text-align: start;
+    padding: 10px;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.btn-group{
+    display:inline-block;
+}
+
+.input-group {
+    display: flex;
+}
+
+.input-group .form-control {
+    margin-bottom: 0;
+}
+
+.input-group button {
+    margin-bottom: 0;
+    margin-left: 15px;
+    height: 40px;
+    padding: 0 50px 0 50px;
+}
+
+.total_price_formate {
+    text-align: end;
+    padding-top: 2rem;
+}
+
+table tbody tr:last-child {
+    border-bottom: 1pt solid black;
+}
+
+/* --------------------------- ERROR MESSAGES ---------------------------*/
+
+#error_message_checkout {
+    color: #EB5E5E;
+    margin-bottom: 1.5rem;
+}
+
+
+/* --------------------------- MEDIA QUERIES ---------------------------*/
+
+@media (min-width: 1000px) {
+
+    .wrapper_nav {
+        padding-left: 2rem;
+    }
+
+    .index_h1 {
+        font-size: 5.2rem;
+        line-height: 4.4rem;
+        max-width: 45%;
+        position: absolute;
+        right: 20px;
+        top: 8rem;
+        text-align: right;
+        display: block;
+        margin-top: 3rem;
+    }
+    
+    .grid-wrapper, .grid-wrapper-headline, .all_magazin {
+        padding-left: 5rem;
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 5rem;
+    }
+
+    .img-first-issue {
+        width: 70%; 
+        margin-bottom: 10%;
+    }
+
+    .item2 {
+        grid-column: 2 / 4;
+    }
+   
+} 
+
+@media (min-width: 1225px) {
+
+    .menu_icon {
+        display: none;
+    }
+
+    .wrapper_nav li {
+        text-decoration: none;
+        list-style: none;
+        padding-right: 2rem; 
+    }
+    
+    .wrapper_nav li:last-child {
+        padding-right: 0; 
+    }
+    
+    .wrapper_nav a {
+        text-decoration: none;  
+    }
+    
+    .hash_logo {
+        margin-left: 1rem;
+    }
+    
+    .hash_logo a {
+        font-size: 2rem;
+        color: #EB5E5E;
+        font-family: whitman-display, serif;
+        font-weight: 800;
+        font-style: normal; 
+        text-decoration: none;  
+    }
+    
+    .wrapper_nav {
+        display: flex;
+        position: relative;
+        width: 100vw;
+        background-color: white;
+        height: 80px;
+        box-shadow: 0 10px 6px -6px #eeeeee;
+        padding-left: 1rem;
+        margin-bottom: 60px;
+    }
+    
+    .menu_points {
+        display: flex;
+        padding-left: 0;
+        width: 100vw;
+        justify-content: flex-end;
+        padding-right: 1rem;
+    }
+    
+    .menu_points > li:nth-child(2) {
+        margin-right: auto;
+    }
+    
+    .hash_logo p {
+        transform: translateY(-20%);
+    }
+    
+    .current {
+        font-weight: 800;
+    } 
+
+    .sticky + .j-sticky-nav {
+        padding-top: 140px;
+    }
+
+    .index_h1 {
+        top: 2rem;
+        margin-top: 4rem;
+    }
+
+} 
+

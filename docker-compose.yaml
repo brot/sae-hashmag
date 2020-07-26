@@ -17,13 +17,25 @@ services:
         image: mariadb:10.5.4
         volumes:
             - mariadb:/var/lib/mysql
+            - ./db-dumps:/docker-entrypoint-initdb.d
         environment:
             TZ: "Europe/Rome"
             MYSQL_ALLOW_EMPTY_PASSWORD: "no"
             MYSQL_ROOT_PASSWORD: "rootpwd"
-            MYSQL_USER: 'testuser'
-            MYSQL_PASSWORD: 'testpassword'
-            MYSQL_DATABASE: 'testdb'
+            MYSQL_USER: 'hash-admin'
+            MYSQL_PASSWORD: 'secret-password'
+            MYSQL_DATABASE: 'hash_magazine'
+
+    phpmyadmin:
+        # https://hub.docker.com/r/phpmyadmin/phpmyadmin/
+        image: phpmyadmin/phpmyadmin:latest
+        ports:
+            - 8000:80
+        environment:
+            - PMA_ARBITRARY=1
+            - PMA_HOST=mariadb
+        depends_on:
+            - mariadb
 
 volumes:
     mariadb:
