@@ -10,11 +10,21 @@ services:
             - ./DocumentRoot:/var/www/html
         links:
             - 'mariadb'
+        environment:
+            BASE_URL: "http://localhost/"
+            DB_CONTAINER_NAME: "mariadb"
+            DB_CONTAINER_PORT: 3306
+        env_file:
+            - database.env
 
     mariadb:
         # https://mariadb.org/
         # https://hub.docker.com/_/mariadb
         image: mariadb:10.5.4
+        command:
+            mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
+        ports:
+            - 3306:3306
         volumes:
             - mariadb:/var/lib/mysql
             - ./db-dumps:/docker-entrypoint-initdb.d
@@ -22,9 +32,8 @@ services:
             TZ: "Europe/Rome"
             MYSQL_ALLOW_EMPTY_PASSWORD: "no"
             MYSQL_ROOT_PASSWORD: "rootpwd"
-            MYSQL_USER: 'hash-admin'
-            MYSQL_PASSWORD: 'secret-password'
-            MYSQL_DATABASE: 'hash_magazine'
+        env_file:
+            - database.env
 
     phpmyadmin:
         # https://hub.docker.com/r/phpmyadmin/phpmyadmin/
